@@ -3,7 +3,7 @@
 All music files will be organized in the genres folder. Each file is stored as
 a 10 second .wave file, and it will fall into one of five categories:
 
-* Classical
+* Soundtrack
 * Hip Hop
 * Jazz
 * Pop
