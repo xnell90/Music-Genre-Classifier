@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
 
+#Create the tracklist from the xml tree
 tree = ET.parse('my_music_library.xml')
 root = tree.getroot()
 
@@ -13,6 +14,7 @@ for item in list(main_dict[0]):
 
 tracklist = list(tracks_dict.findall('dict'))
 
+#Save the dataframe from dictionary as a csv file
 music_data = {
     "Track ID": [],
     "Name": [],
@@ -34,4 +36,4 @@ for track in tracklist:
             music_data[name].append(value)
 
 music_df = pd.DataFrame.from_dict(music_data)
-music_df.to_csv("my_music_metadata.csv")
+music_df.to_csv("my_music_metadata.csv", index=False)
