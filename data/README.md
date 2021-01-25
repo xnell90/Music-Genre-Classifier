@@ -17,4 +17,4 @@ The dataset will come from multiple sources including:
 
 For the python code that was used to extract the data, see the scripts folder
 As of now, all scripts relating to my personal music collection are  in the
-scripts folders.
+scripts folder.
