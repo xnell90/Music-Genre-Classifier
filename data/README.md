@@ -16,4 +16,5 @@ The dataset will come from multiple sources including:
 3. Free Music Archive (In Progress)
 
 For the python code that was used to extract the data, see the scripts folder
-(coming soon...).
+As of now, all scripts relating to my personal music collection is all in the
+scripts folders.
