@@ -11,9 +11,9 @@ a 10 second .wave file, and it will fall into one of five categories:
 
 The dataset will come from multiple sources including:
 
-1. My Personal Music Collection
-2. Audio Set
-3. Free Music Archive
+1. My Personal Music Collection (Complete)
+2. Audio Set (In Progress)
+3. Free Music Archive (In Progress)
 
 For the python code that was used to extract the data, see the scripts folder
 (coming soon...).
