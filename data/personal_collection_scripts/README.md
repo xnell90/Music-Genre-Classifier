@@ -13,19 +13,7 @@ display(my_music_metadata_df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -203,10 +191,10 @@ That is about 6.26 gigabytes of data, and its duration is about 2 days.
 ```python
 file_type_counter = my_music_metadata_df['Kind'].value_counts()
 file_type_counter.plot(
-    kind='pie', 
-    figsize=(15,10), 
-    colors=['#ff9999','#99ff99'], 
-    title='File Types', 
+    kind='pie',
+    figsize=(15,10),
+    colors=['#ff9999','#99ff99'],
+    title='File Types',
     ylabel=""
 )
 plt.show()
@@ -214,9 +202,9 @@ print(file_type_counter)
 ```
 
 
-    
+
 ![png](output_7_0.png)
-    
+
 
 
     MPEG audio file             682
@@ -230,18 +218,18 @@ print(file_type_counter)
 ```python
 music_genre_counter = my_music_metadata_df['Genre'].value_counts()
 music_genre_counter.plot(
-    kind='bar', 
-    figsize=(15,10), 
-    color=['#66b3ff'], 
+    kind='bar',
+    figsize=(15,10),
+    color=['#66b3ff'],
     title='Music Genres'
 )
 plt.show()
 ```
 
 
-    
+
 ![png](output_9_0.png)
-    
+
 
 
 As you can see on the above bar graph, there are over 18 genres in my personal music collection. To simplify the machine learning process, we need to reclassify each of the songs into one of five genres:
@@ -263,28 +251,28 @@ Here is a list of helper methods that aid in the data cleaning process.
 def filter_tracks_by_genre(genre):
     genre_conditional = my_music_metadata_df['Genre'] == genre
     songs_by_genre = my_music_metadata_df[genre_conditional]
-    
+
     return songs_by_genre
 
 #filter tracks by album name
 def filter_tracks_by_album(album):
     album_conditional = my_music_metadata_df['Album'] == album
     songs_by_album = my_music_metadata_df[album_conditional]
-    
+
     return songs_by_album
 
 #Once filter tracks by genre, get me the list of albums
 def get_albums_by_genre(genre):
     songs_by_genre = filter_tracks_by_genre(genre)
     album_list = list(songs_by_genre['Album'].unique())
-    
+
     return album_list
 
 #Once filter tracks by album, get me the list of artists
 def get_artists_by_album(album):
     songs_by_genre = filter_tracks_by_album(album)
     artist_list = list(songs_by_genre['Artist'].unique())
-    
+
     return artist_list
 
 #Once filter tracks by genre, get me a list of albums along with their associated artists
@@ -316,19 +304,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -404,8 +380,8 @@ tracks.sample(4)
 display_album_artist_by_genre("Pop/Rock")
 ```
 
-    List Of Albums Labeled As Pop/Rock Along With Associated Artists: 
-    ** Back to Basics 
+    List Of Albums Labeled As Pop/Rock Along With Associated Artists:
+    ** Back to Basics
        1 - Christina Aguilera
     ** American Idiot
        1 - Green Day
@@ -450,9 +426,9 @@ All tracks that lie in the above albums, they will be labeled as "Pop" music. Fo
 
 ```python
 pop_albums = [
-    'Back to Basics ', 
-    '÷', 
-    'Stripped', 
+    'Back to Basics ',
+    '÷',
+    'Stripped',
     'Intertwined - EP'
 ]
 
@@ -476,19 +452,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -564,7 +528,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Rap")
 ```
 
-    List Of Albums Labeled As Rap Along With Associated Artists: 
+    List Of Albums Labeled As Rap Along With Associated Artists:
     ** DAMN.
        1 - Kendrick Lamar
        2 - Kendrick Lamar/Rihanna
@@ -610,19 +574,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -698,7 +650,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Score")
 ```
 
-    List Of Albums Labeled As Score Along With Associated Artists: 
+    List Of Albums Labeled As Score Along With Associated Artists:
     ** The Queen's Gambit (Music from the Netflix Limited Series)
        1 - Carlos Rafael Rivera
 
@@ -722,19 +674,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -810,7 +750,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Alternative")
 ```
 
-    List Of Albums Labeled As Alternative Along With Associated Artists: 
+    List Of Albums Labeled As Alternative Along With Associated Artists:
     ** Pray For the Wicked
        1 - Panic! At the Disco
     ** Pray For The Wicked
@@ -843,19 +783,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -931,7 +859,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Hip-Hop/Rap")
 ```
 
-    List Of Albums Labeled As Hip-Hop/Rap Along With Associated Artists: 
+    List Of Albums Labeled As Hip-Hop/Rap Along With Associated Artists:
     ** Curtain Call - The Hits (Deluxe Version)
        1 - Eminem
        2 - Eminem & Dido
@@ -961,19 +889,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1049,7 +965,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Vocal Jazz")
 ```
 
-    List Of Albums Labeled As Vocal Jazz Along With Associated Artists: 
+    List Of Albums Labeled As Vocal Jazz Along With Associated Artists:
     ** Nothing But the Best - The Frank Sinatra Collection (Remastered)
        1 - Frank Sinatra
 
@@ -1073,19 +989,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1161,7 +1065,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Religious/Pop/Rock")
 ```
 
-    List Of Albums Labeled As Religious/Pop/Rock Along With Associated Artists: 
+    List Of Albums Labeled As Religious/Pop/Rock Along With Associated Artists:
     ** Stacie Orrico
        1 - Stacie Orrico
 
@@ -1185,19 +1089,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1273,12 +1165,12 @@ tracks.sample(4)
 display_album_artist_by_genre("Alternative Metal / Nu-Metal / Gothic Rock")
 ```
 
-    List Of Albums Labeled As Alternative Metal / Nu-Metal / Gothic Rock Along With Associated Artists: 
+    List Of Albums Labeled As Alternative Metal / Nu-Metal / Gothic Rock Along With Associated Artists:
     ** Fallen
        1 - Evanescence
 
 
-Metal is sub-genre of Rock so because of this all songs in the Fallen album are labeled as rock. 
+Metal is sub-genre of Rock so because of this all songs in the Fallen album are labeled as rock.
 
 
 ```python
@@ -1297,19 +1189,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1385,7 +1265,7 @@ tracks.sample(4)
 display_album_artist_by_genre("R&B/Soul")
 ```
 
-    List Of Albums Labeled As R&B/Soul Along With Associated Artists: 
+    List Of Albums Labeled As R&B/Soul Along With Associated Artists:
     ** Trip
        1 - Jake Barker & Blended Babies
 
@@ -1397,7 +1277,7 @@ R & B is a sub genre of Hip-Hop (see Musical_Genre_Taxonomy.png), so all songs i
 relabel_album_genre("Trip", "Hip-Hop")
 ```
 
-## R & B 
+## R & B
 
 
 ```python
@@ -1409,19 +1289,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1497,7 +1365,7 @@ tracks.sample(4)
 display_album_artist_by_genre("R&B")
 ```
 
-    List Of Albums Labeled As R&B Along With Associated Artists: 
+    List Of Albums Labeled As R&B Along With Associated Artists:
     ** 24K Magic
        1 - Bruno Mars
 
@@ -1523,19 +1391,7 @@ tracks.sample(4)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1611,7 +1467,7 @@ tracks.sample(4)
 display_album_artist_by_genre("Singer/Songwriter")
 ```
 
-    List Of Albums Labeled As Singer/Songwriter Along With Associated Artists: 
+    List Of Albums Labeled As Singer/Songwriter Along With Associated Artists:
     ** You - EP
        1 - dodie
 
@@ -1631,19 +1487,7 @@ display(tracks)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1682,7 +1526,7 @@ display(tracks)
 display_album_artist_by_genre("Alternative Folk")
 ```
 
-    List Of Albums Labeled As Alternative Folk Along With Associated Artists: 
+    List Of Albums Labeled As Alternative Folk Along With Associated Artists:
     ** Here Comes The Sun (feat. dodie) - Single
        1 - Jacob Collier
 
@@ -1702,19 +1546,7 @@ display(tracks)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1753,7 +1585,7 @@ display(tracks)
 display_album_artist_by_genre("Pop Latino")
 ```
 
-    List Of Albums Labeled As Pop Latino Along With Associated Artists: 
+    List Of Albums Labeled As Pop Latino Along With Associated Artists:
     ** Despacito (feat. Daddy Yankee) - Single
        1 - Luis Fonsi
 
@@ -1773,19 +1605,7 @@ display(tracks)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1826,7 +1646,7 @@ There is only one track that has the genre 'EDM' so to make things simple, let u
 display_album_artist_by_genre("EDM")
 ```
 
-    List Of Albums Labeled As EDM Along With Associated Artists: 
+    List Of Albums Labeled As EDM Along With Associated Artists:
     ** Stay With Me - Single
        1 - Diamond Eyes & Christina Grimmie
 
@@ -1842,9 +1662,9 @@ relabel_album_genre("Stay With Me - Single", "Pop")
 ```python
 music_genre_counter = my_music_metadata_df['Genre'].value_counts()
 music_genre_counter.plot(
-    kind='barh', 
-    figsize=(15,10), 
-    color='lightblue', 
+    kind='barh',
+    figsize=(15,10),
+    color='lightblue',
     title='Music Genres (After Relabelling)'
 )
 plt.show()
@@ -1852,9 +1672,9 @@ my_music_metadata_df.Genre.value_counts()
 ```
 
 
-    
+
 ![png](output_83_0.png)
-    
+
 
 
 
