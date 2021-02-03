@@ -1,9 +1,23 @@
+'''
+From the previous notebook (see README.ipynb), we have these number of tracks for
+each genre we want to classify
 
-# Pop           ----------- sample 2 ten seconds segments (.wav) format from music file
-# Rock          ----------- sample 2 ten seconds segments (.wav) format from music file
-# Soundtrack    ----------- sample 3 ten seconds segments (.wav) format from music file
-# Hip-Hop       ----------- sample 6 ten seconds segments (.wav) format from music file
-# Jazz          ----------- sample 6 ten seconds segments (.wav) format from music file
+Pop             266
+Rock            252
+Soundtrack      170
+Hip-Hop         97
+Jazz            94
+
+To upsample the number of tracks in each category, we will use the following
+upsampling method for each track that falls into one of the five categories:
+
+# Pop           ----------- sample 2 ten seconds segments (.wav format) from music file
+# Rock          ----------- sample 2 ten seconds segments (.wav format) from music file
+# Soundtrack    ----------- sample 3 ten seconds segments (.wav format) from music file
+# Hip-Hop       ----------- sample 6 ten seconds segments (.wav format) from music file
+# Jazz          ----------- sample 6 ten seconds segments (.wav format) from music file
+'''
+
 import os
 import pandas as pd
 
@@ -44,3 +58,13 @@ for i in tqdm(range(num_tracks)):
         folder_location = parent_working_dr + "/genres/" + genre_folder
 
         audio_sample.export(folder_location + new_filename, format="wav")
+
+'''
+After running the script, here is the number of files in each of the categories:
+
+# Pop           ----------- 532
+# Rock          ----------- 504
+# Soundtrack    ----------- 510
+# Hip-Hop       ----------- 582
+# Jazz          ----------- 564
+'''

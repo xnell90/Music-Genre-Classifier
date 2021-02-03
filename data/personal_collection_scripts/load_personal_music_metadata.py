@@ -1,8 +1,15 @@
+'''
+To extract your music metadata from the music app (Apple), you can export an xml
+file that describes all of your songs (file -> library -> export library). From
+there run the script below with the correct name of the xml file. After running
+the script, you will have the data in the form of an csv file.
+'''
+
 import xml.etree.ElementTree as ET
 import pandas as pd
 
 #Create the tracklist from the xml tree
-tree = ET.parse('my_music_library.xml')
+tree = ET.parse('my_music_library.xml') #<--- Insert the name of the xml file
 root = tree.getroot()
 
 main_dict = root.findall('dict')
@@ -37,3 +44,8 @@ for track in tracklist:
 
 music_df = pd.DataFrame.from_dict(music_data)
 music_df.to_csv("my_music_metadata.csv", index=False)
+
+
+'''
+source: https://leojosefm.medium.com/python-analyzing-itunes-library-97bec60e13cb
+'''
