@@ -12,6 +12,6 @@ The dataset will come from multiple sources including:
 
 1. My Personal Music Collection (Completed)
 2. Audio Set (In Progress)
-3. Free Music Archive (In Progress)
+3. Free Music Archive (Completed except README)
 
-For the python code that was used to extract the data, see the scripts folder. As of now, all scripts relating to my personal music collection are  in the personal_collection_scripts folder.
+For the python code that was used to extract the data, see all folders that end with '_scripts'. 
