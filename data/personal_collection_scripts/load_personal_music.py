@@ -61,7 +61,6 @@ for i in tqdm(range(num_tracks)):
 
 '''
 After running the script, here is the number of files in each of the categories:
-
 # Pop           ----------- 532
 # Rock          ----------- 504
 # Soundtrack    ----------- 510

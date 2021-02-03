@@ -45,7 +45,6 @@ for track in tracklist:
 music_df = pd.DataFrame.from_dict(music_data)
 music_df.to_csv("my_music_metadata.csv", index=False)
 
-
 '''
 source: https://leojosefm.medium.com/python-analyzing-itunes-library-97bec60e13cb
 '''
