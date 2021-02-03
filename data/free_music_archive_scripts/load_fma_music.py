@@ -26,14 +26,15 @@ for n_genre, genre in [(n_rock, 'rock'), (n_pop, 'pop')]:
         track_id_samples = fma_small_metadata[genre_filter].sample(frac=1).head(n_genre)['track_id']
 
         for track_id in track_id_samples:
-            file_location = 'fma_small/' + '{:06d}'.format(track_id)[0:3] + '/' + '{:06d}'.format(track_id) + '.mp3'
+            formatted_track_id = '{:06d}'.format(track_id)
+            file_location = 'fma_small/' + formatted_track_id[0:3] + '/' + formatted_track_id + '.mp3'
             audio = AudioSegment.from_file(file_location)
 
             start = randrange(len(audio) -  10000)
             end = start + 10000
             audio_sample = audio[start:end]
 
-            new_filename = "1" + "_" + '{:06d}'.format(track_id) + "_0.wav"
+            new_filename = "1" + "_" + formatted_track_id + "_0.wav"
             folder_location = parent_working_dr + "/genres/" + genre + "/"
 
             audio_sample.export(folder_location + new_filename, format="wav")
