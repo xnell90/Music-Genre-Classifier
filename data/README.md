@@ -1,6 +1,6 @@
-# Data Collection
+# Music Data
 
-All music files will be organized in the genres folder. Each file is stored as a 10 second .wave file, and it will fall into one of five categories:
+All music files will be organized in the genres folder, and they can be downloaded from the following link (Coming Soon). Each file is stored as a 10 second .wave file, and it will fall into one of five categories:
 
 * Soundtrack
 * Hip Hop
@@ -10,8 +10,8 @@ All music files will be organized in the genres folder. Each file is stored as a
 
 The dataset will come from multiple sources including:
 
-1. My Personal Music Collection (Completed)
-2. Audio Set (In Progress)
-3. Free Music Archive (Completed except README)
+1. My Personal Music Collection
+2. Audio Set (Work In Progress)
+3. Free Music Archive
 
-For the python code that was used to extract the data, see all folders that end with '_scripts'. 
+To learn more about how the data was extracted from these sources, feel free to browse into the '_scripts' folders and read the README.md file.
