@@ -14,4 +14,4 @@ The fma_small is the small version of the entire free music archive dataset. It 
   * Rock
   * Folk
 
-Addtionally, the fma_small dataset is a balanced dataset so each genre category will have 1,000 files. Once you download the dataset, run the load_fma_metadata.py script so that you can extract the necessary information from the fma_metadata directory and save it as a csv file. Afterwards you can run the load_fma_music.py script with the provided parameters; --n_pop for the number of pop songs, and --n_rock for the number of rock songs to sample.
+Addtionally, the fma_small dataset is a balanced dataset so each genre category will have 1,000 files. Once you download the datasets, run the *load_fma_metadata.py* script so that you can extract the necessary information from the fma_metadata directory and save it as a csv file. Afterwards you can run the *load_fma_music.py* script with the provided parameters; --n_pop for the number of pop songs, and --n_rock for the number of rock songs to sample.
