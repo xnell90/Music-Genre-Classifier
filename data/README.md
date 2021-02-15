@@ -1,6 +1,6 @@
 # Music Data
 
-All music files will be organized in the genres folder, and they can be downloaded from the following link (Coming Soon). Each file is stored as a 10 second .wave file, and it will fall into one of five categories:
+All music files will be organized in the genres folder, and they can be downloaded from the following link (Chttps://drive.google.com/file/d/1W5L4DyK49MaPrPw-zXcuKSIer3sjwtv5/view?usp=sharing). Each file is stored as a 10 second .wave file, and it will fall into one of five categories:
 
 * Soundtrack
 * Hip Hop
