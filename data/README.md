@@ -11,7 +11,7 @@ All music files will be organized in the genres folder, and they can be download
 The dataset will come from multiple sources including:
 
 1. My Personal Music Collection
-2. Youtube Audio
+2. Youtube Playlist
 3. Free Music Archive
 
 To learn more about how the data was extracted from these sources, feel free to browse into the '_scripts' folders and read the README.md file.
