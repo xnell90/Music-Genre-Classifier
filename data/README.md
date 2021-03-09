@@ -15,5 +15,6 @@ The dataset will come from multiple sources including:
 3. Free Music Archive
 
 To learn more about how the data was extracted from these sources, feel free to browse into the '_scripts' folders and read the README.md file.
+For the exploratory data analysis, feel free to look over the **exploratory_data_analysis.ipynb** notebook (work in progress).
 
  data: (https://drive.google.com/file/d/1W5L4DyK49MaPrPw-zXcuKSIer3sjwtv5/view?usp=sharing)
