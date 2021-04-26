@@ -7,4 +7,5 @@ data/free_music_archive_scripts/fma_small/*
 data/free_music_archive_scripts/fma_metadata/*
 *.csv
 *.npy
-*hdf5
+*.hdf5
+*.zip
