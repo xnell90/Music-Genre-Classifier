@@ -12,4 +12,3 @@ modified_pretrained_cnn_model.hdf5
 pretrained_cnn_model_v1.hdf5
 pretrained_cnn_model_v2.hdf5
 cnn_model.hdf5
-genre_classification_model.hdf5
