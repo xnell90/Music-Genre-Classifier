@@ -13,6 +13,8 @@ CNN Models:
  * pretrained_cnn_model_v2.hdf5
  * modified_pretrained_cnn_model.hdf5
 
- Alternatively, you can download the zip file **output_files.zip** from the link below, unzip it, and move each file in the output_files folder to this directory.
+ Alternatively, you can download the zip file **output_files.zip** from the first link below, unzip it, and move each file in the output_files folder to this directory.
+ To use the best genre classification model, simply download **genre_classification_model.hdf5** from the second link below, and move it to this directory.
 
- model: (https://drive.google.com/file/d/1eljHsLAsZsj0XA57mIr3rVcQowbW19_J/view?usp=sharing)
+ output_files: (https://drive.google.com/file/d/1eljHsLAsZsj0XA57mIr3rVcQowbW19_J/view?usp=sharing)
+ model: (https://drive.google.com/file/d/1jTkNLgqoZg-51az1Z1MiDM7dfhXfFml0/view?usp=sharing)
