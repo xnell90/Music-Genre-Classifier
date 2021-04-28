@@ -15,4 +15,4 @@ CNN Models:
 
  Alternatively, you can download the zip file **output_files.zip** from the link below, unzip it, and move each file in the output_files folder to this directory.
 
- model: (https://drive.google.com/file/d/1FpsjUJnPegVxExbDCxTsKhHGjeT8YKm3/view?usp=sharing)
+ model: (https://drive.google.com/file/d/1eljHsLAsZsj0XA57mIr3rVcQowbW19_J/view?usp=sharing)
