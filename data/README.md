@@ -2,11 +2,11 @@
 
 All music files will be organized in the genres folder, and they can be downloaded from the link below. Each file is stored as a 10 second .wave file, and it will fall into one of five categories:
 
-* Soundtrack
-* Hip Hop
+* Hip-Hop
 * Jazz
 * Pop
 * Rock
+* Soundtrack
 
 The dataset will come from multiple sources including:
 
@@ -14,7 +14,7 @@ The dataset will come from multiple sources including:
 2. Youtube Playlists
 3. Free Music Archive
 
-To learn more about how the data was extracted from these sources, feel free to browse into the '_scripts' folders and read the README.md file.
+To learn more about how the data was extracted from these sources, feel free to browse into the folders above and read the README.md file.
 For the exploratory data analysis, feel free to look over the **exploratory_data_analysis.ipynb** notebook. If you want to clone this repository,
 download the dataset from the link below, extract the zip file to get the **genres** folder, and store it under this directory.
 
