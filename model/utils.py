@@ -17,3 +17,18 @@ def load_model():
         model.load_weights("model/model_weights.h5")
 
         return model
+
+def compute_melspectrogram():
+    pass
+
+def compute_tempo():
+    pass
+
+def compute_zero_crossing_rate():
+    pass
+
+def compute_average_spectral_flatness():
+    pass
+
+def predict_genre():
+    pass
