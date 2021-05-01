@@ -17,14 +17,6 @@ from librosa.onset import onset_strength
 #     model.save_weights("model/model_weights.h5")
 #-----------------------------------------------------
 
-GENRES = {
-    0: 'hip-hop',
-    1: 'jazz',
-    2: 'pop',
-    3: 'rock',
-    4: 'soundtrack'
-}
-
 def load_model():
     with open('model/model_architecture.json', 'r') as json_file:
         model = tf.keras.models.model_from_json(json_file.read())
@@ -59,4 +51,12 @@ def predict_genre(file_location):
     probabilities = model.predict([melspectrogram, extracted_features])
     index = int(probabilities.argmax(axis=1))
 
-    return GENRES[index]
+    genre = {
+        0: 'hip-hop',
+        1: 'jazz',
+        2: 'pop',
+        3: 'rock',
+        4: 'soundtrack'
+    }
+
+    return genre[index]
