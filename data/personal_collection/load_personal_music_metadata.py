@@ -36,6 +36,7 @@ music_data = {
 
 for track in tracklist:
     track_info = list(track)
+    
     for i in range(len(track_info)):
         if track_info[i].text in music_data.keys():
             name = track_info[i].text

@@ -23,21 +23,30 @@ for n_genre, genre in [(n_rock, 'rock'), (n_pop, 'pop')]:
     if n_genre != 0:
         no_input = False
         genre_filter = fma_small_metadata.genre_top == genre.capitalize()
-        track_id_samples = fma_small_metadata[genre_filter].sample(frac=1).head(n_genre)['track_id']
+        track_id_samples = (
+            fma_small_metadata[genre_filter].sample(frac=1)
+                                            .head(n_genre)
+        )['track_id']
 
         for track_id in track_id_samples:
             formatted_track_id = '{:06d}'.format(track_id)
-            file_location = 'fma_small/' + formatted_track_id[0:3] + '/' + formatted_track_id + '.mp3'
+            file_location = (
+                'fma_small/' + formatted_track_id[0:3] +
+                '/' +
+                formatted_track_id + '.mp3'
+            )
             audio = AudioSegment.from_file(file_location)
 
-            start = randrange(len(audio) -  10000)
-            end = start + 10000
-            audio_sample = audio[start:end]
+            i = randrange(len(audio) -  10000)
+            j = i + 10000
+            audio_sample = audio[i:j]
 
-            new_filename = "1" + "_" + formatted_track_id + "_0.wav"
-            folder_location = parent_working_dr + "/genres/" + genre + "/"
+            new_file = "1_" + formatted_track_id + "_0.wav"
+            new_file_location = (
+                parent_working_dr + "/genres/" + genre + "/" + new_file
+            )
 
-            audio_sample.export(folder_location + new_filename, format="wav")
+            audio_sample.export(new_file_location, format="wav")
 
 if no_input:
     print("Error! Please define the genre you want to sample, along with the number of samples")
