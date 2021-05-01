@@ -1,10 +1,15 @@
 import numpy as np
+import os
 import tensorflow as tf
 
 from librosa import load, power_to_db, zero_crossings
 from librosa.beat import tempo
 from librosa.feature import melspectrogram, spectral_flatness
 from librosa.onset import onset_strength
+from pydub import AudioSegment
+from random import randrange
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # Added for reference...
 # ----------------------------------------------------
@@ -37,10 +42,20 @@ def compute_average_spectral_flatness(y):
     return np.mean(spectral_flatness(y=y))
 
 def predict_genre(file_location):
-    y, sr = load(file_location)
+    audio = AudioSegment.from_file(file_location)
+    i = randrange(len(audio) - 10000)
+    j = i + 10000
+    audio_sample = audio[i:j]
+    audio_sample.export("cache.wav", format="wav")
+
+    y, sr = load("cache.wav")
     model = load_model()
 
     melspectrogram = compute_melspectrogram(y, sr)
+    melspectrogram = melspectrogram.reshape(
+        1, *melspectrogram.shape, 1
+    )
+
     extracted_features = np.array(
         [
             [compute_tempo(y, sr)],
@@ -48,15 +63,19 @@ def predict_genre(file_location):
             [compute_average_spectral_flatness(y)],
         ]
     )
+    extracted_features = extracted_features.reshape(
+        1, *extracted_features.shape
+    )
     probabilities = model.predict([melspectrogram, extracted_features])
-    index = int(probabilities.argmax(axis=1))
+    probabilities = probabilities.flatten()
 
+    index = int(probabilities.argmax())
     genre = {
-        0: 'hip-hop',
-        1: 'jazz',
-        2: 'pop',
-        3: 'rock',
-        4: 'soundtrack'
+        0: 'Hip-Hop',
+        1: 'Jazz',
+        2: 'Pop',
+        3: 'Rock',
+        4: 'Soundtrack'
     }
 
-    return genre[index]
+    return genre[index], probabilities
