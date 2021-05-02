@@ -1,5 +1,5 @@
 # Music Genre Classifier (Command Line Interface)
 
-This repository demonstrates how you can use a convolutional neural network to classify a song's genre. As of now, the model development phase is completed.
+This repository demonstrates how you can use a convolutional neural network to classify a song's genre. As of now, the model development phase is completed, and the CLI verison of the app is now available.
 
-Note: This is the command line interface version of the app. To use it, simply run the **app.py** file
+Note: To use it, simply run the **app.py** file.
