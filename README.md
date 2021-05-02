@@ -5,3 +5,5 @@ This repository demonstrates how you can use a convolutional neural network to c
 Next steps:
  * Create a simple web application using streamlit.
  * Deploy the web application using Heroku.
+
+ Note: A Streamlit application can be run locally. Simply run the command *streamlit run app.py*.
