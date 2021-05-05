@@ -1,4 +1,4 @@
-# Music Genre Classifier
+# Music Genre Classifier (Streamlit Application)
 
 This repository demonstrates how you can use a convolutional neural network to classify a song's genre. As of now, the model development phase is completed.
 
