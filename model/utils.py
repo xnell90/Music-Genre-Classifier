@@ -43,13 +43,21 @@ def compute_average_spectral_flatness(y):
 
 def predict_genre(file, model):
     audio = AudioSegment.from_file(file)
-    i = randrange(len(audio) - 10000)
+    audio_length = len(audio)
+
+    if audio_length < 10000:
+        return None, None
+    elif audio_length > 10000:
+        i = randrange(audio_length - 10000)
+    else:
+        i = 0
     j = i + 10000
+
     audio_sample = audio[i:j]
     audio_sample.export("cache.wav", format="wav")
 
     y, sr = load("cache.wav")
-    
+
     melspectrogram = compute_melspectrogram(y, sr)
     melspectrogram = melspectrogram.reshape(
         1, *melspectrogram.shape, 1

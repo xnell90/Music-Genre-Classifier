@@ -10,13 +10,19 @@ file = st.file_uploader(
 if file:
     model = load_model()
     genre, probabilities = predict_genre(file, model)
-    st.write("Predicted Genre: ", genre)
 
-    probability_table = pd.DataFrame(
-        {
-            "Genre": ["Hip-Hop", "Jazz", "Pop", "Rock", "Soundtrack"],
-            "Probability": list(probabilities)
-        }
-    )
+    no_genre = genre is None
+    no_probabilities = genre is None
 
-    st.table(probability_table)
+    if no_genre and no_probabilities:
+        st.write("Error: Please enter an mp3 file that is at least 10 seconds long.")
+    else:
+        st.write("Predicted Genre: ", genre)
+        probability_table = pd.DataFrame(
+            {
+                "Genre": ["Hip-Hop", "Jazz", "Pop", "Rock", "Soundtrack"],
+                "Probability": list(probabilities)
+            }
+        )
+
+        st.table(probability_table)
