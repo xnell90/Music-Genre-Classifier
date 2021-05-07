@@ -21,7 +21,6 @@ model = load_model()
 for file in valid_files:
     predicted_genre, _ = predict_genre("tests/" + file, model)
     actual_genre = expected_genres[file]
-    print(file, predicted_genre, '\t', actual_genre)
     assert predicted_genre == expected_genres[file]
 
 #Test --check_mp3
