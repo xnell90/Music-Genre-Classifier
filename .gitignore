@@ -1,7 +1,7 @@
 *.DS_Store
 *.ipynb_checkpoints
-*.wav
-*.mp3
+data/genres/
+cache.wav
 *.mp4
 data/free_music_archive_scripts/fma_small/*
 data/free_music_archive_scripts/fma_metadata/*

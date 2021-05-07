@@ -41,11 +41,11 @@ def compute_zero_crossing_rate(y):
 def compute_average_spectral_flatness(y):
     return np.mean(spectral_flatness(y=y))
 
-def check_mp3(file_location):
+def check_valid_mp3(file_location):
     audio = AudioSegment.from_file(file_location)
     return len(audio) >= 10000 and file_location[-4:] == '.mp3'
 
-def predict_genre(file_location):
+def predict_genre(file_location, model):
     audio = AudioSegment.from_file(file_location)
     if len(audio) > 10000:
         i = randrange(len(audio) - 10000)
@@ -56,7 +56,6 @@ def predict_genre(file_location):
     audio_sample.export("cache.wav", format="wav")
 
     y, sr = load("cache.wav")
-    model = load_model()
 
     melspectrogram = compute_melspectrogram(y, sr)
     melspectrogram = melspectrogram.reshape(

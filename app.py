@@ -3,10 +3,11 @@ from model.utils import *
 
 print("-------------------------------------")
 file_location = input("Enter File Location: ")
-valid_mp3 = check_mp3(file_location)
+valid_mp3 = check_valid_mp3(file_location)
 
 if valid_mp3:
-    genre, probabilities = predict_genre(file_location)
+    model = load_model()
+    genre, probabilities = predict_genre(file_location, model)
     table = pd.DataFrame(
         {
             "Genre": ["Hip-Hop", "Jazz", "Pop", "Rock", "Soundtrack"],
