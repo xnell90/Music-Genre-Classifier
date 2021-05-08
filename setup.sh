@@ -1,4 +1,4 @@
-mkdir -p ~/.streamlint/
+mkdir -p ~/.streamlit/
 
 echo "
 [server]\n\
