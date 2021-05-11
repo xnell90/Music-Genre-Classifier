@@ -7,7 +7,7 @@ There are three branches associated to this repository:
  * streamlit-app-v1.0
  * command-line-interface-v1.0
 
-The master branch contains documentation on how the convolutional neural network model was created using Keras with Tensorflow as backend framework. It also includes python code on how the music data was collected and formatted prior to the training process of the neural network.
+The master branch contains documentation on how the convolutional neural network model was created using Keras with Tensorflow as a backend framework. It also includes python code on how the music data was collected and formatted prior to the training process of the neural network.
 
 The streamlit branch contains the necessary code to deploy the web application into Heroku, and includes instruction how to deploy the web application to Heroku.
 
