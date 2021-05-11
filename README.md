@@ -13,4 +13,4 @@ The streamlit branch contains the necessary code to deploy the web application i
 
 Finally, the command-line branch contains the minimal amount of code for running the app via the terminal.
 
- Note: master and streamlit branch can be run the streamlit app locally. Simply run the command *streamlit run app.py*.
+ Note: master and streamlit branch can run the streamlit app locally. Simply run the command *streamlit run app.py*.
