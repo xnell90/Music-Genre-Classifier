@@ -14,7 +14,7 @@ For more information on the content of each file, feel free to browse them in th
 
 Essentially, they are links/scripts that Heroku uses once your web application is deployed. The first two are for processing audio files, while the last for using the python packages in the requirements.txt file.
 
-## How the web applicaiton works?
+## How the web application works?
 
 Since the web application is built using Streamlit, it only requires 4 files:
  * app.py
