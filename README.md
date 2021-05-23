@@ -24,4 +24,4 @@ Since the web application is built using Streamlit, it only requires 4 files:
 
 The app.py renders the front end side of the application where the user can upload an mp3 file. Once the user uploads the file, the app will load the model by using the utils.py file, and then the model makes a prediction on the genre of the uploaded mp3 file.
 
-Note: The Streamlit application can be run locally. Simply run the command *streamlit run app.py*.
+Note: The Streamlit application can be run locally. Simply run the command *streamlit run app.py*. To run some tests before running the application locally, or deploying the model into Heroku, run the **tests.py** file and see if there are any errors.
