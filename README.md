@@ -10,4 +10,4 @@ There are three branches associated to this repository:
 
  * **command-line-interface-v1.0** - contains the minimal amount of code for running the app via the terminal.
 
-Note: master and streamlit branch can run the streamlit app locally. Simply run the command *streamlit run app.py*.
+Note: master and streamlit branch can run the streamlit app locally. Simply run the command *streamlit run app.py*. To run some tests before running the application locally, or deploying the model into Heroku, run the **tests.py** file and see if there are any errors.
